@@ -111,16 +111,46 @@ sd2_final = data.frame(artist = sd2_content$content[seq(1, nrow(sd2_content), 3)
 
 write_csv(sd2_final, 'lyrics_2_clean.csv')
 
+#########################################################################################################
+#                                              Data Joining
+#########################################################################################################
 
+bb = read_csv('billboard_clean.csv')
+names(bb) = c('title', 'artist', 'lyrics1')
+bb$chart = 1
 
+sd_1 = read_csv('lyrics_1_clean.csv')
+names(sd_1) = c('artist', 'title', 'lyrics2')
 
+sd_2 = read_csv('lyrics_2_clean.csv')
+names(sd_2) = c('artist', 'lyrics3', 'title')
 
+#merge first two datasets
+join_1 = merge(bb, sd_1, by = c('title', 'artist'), all.x = T, all.y = T)
 
+#get lyrics from either column
+join_1$full_lyrics = NA
+join_1$full_lyrics[is.na(join_1$lyrics1) == T] = join_1$lyrics2[is.na(join_1$lyrics1) == T]
+join_1$full_lyrics[is.na(join_1$full_lyrics) == T] = join_1$lyrics1[is.na(join_1$full_lyrics) == T]
 
+join_1 = join_1[, c(1, 2, 4, 6)]
 
+#merge next dataset
+full = merge(join_1, sd_2, by = c('title', 'artist'), all.x = T, all.y = T)
 
+#get new lyrics
+full$full_lyrics[is.na(full$full_lyrics) == T] = full$lyrics3[is.na(full$full_lyrics) == T]
 
+full = full[, -5]
 
+#properly assign chart variable
+full$chart[is.na(full$chart) == T] = 0
+full$chart = as.factor(full$chart)
+
+#remove songs without lyrics
+full = na.omit(full)
+
+write_csv(full, 'full_lyrics.csv')
 
 
 
