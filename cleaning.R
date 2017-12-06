@@ -151,9 +151,3 @@ full$chart = as.factor(full$chart)
 full = na.omit(full)
 
 write_csv(full, 'full_lyrics.csv')
-
-
-
-
-
-
