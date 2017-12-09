@@ -1,8 +1,10 @@
 # Text Mining Song Lyrics
 Using text mining techniques on song lyrics to predict success
-****
 
 Duncan Rule, Abhijith Mandya, and Nitesh Prakash
+****
+
+
 ****
 
 ## Hypothesis, Objective & Metrics
