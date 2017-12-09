@@ -2,8 +2,6 @@
 Using text mining techniques on song lyrics to predict success
 
 Duncan Rule, Abhijith Mandya, and Nitesh Prakash
-****
-
 
 ****
 
