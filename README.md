@@ -15,7 +15,7 @@ Our objective is to build models that can accurately predict whether a song will
 
 Our hypothesis that a song’s lyrics are predictive of its success is supported by our results. We were able to predict with high accuracy which songs would place on the year-end Billboard Top 100 chart, but all of our models suffered from the class imbalance of our response variable - predicting a successful song proved to be much more difficult than correctly labelling an unsuccessful song, as shown by the confusion matrices. Despite this weakness of our models, they were all shown to be valuable predictors with relatively high AUC values.
 
-## [[Data]](https://virginia.box.com/s/2ssuphywc78su1cjtwahn5w7lkv5nyvg)
+## [Data](https://virginia.box.com/s/2ssuphywc78su1cjtwahn5w7lkv5nyvg)
 
 The data was obtained from multiple Kaggle datasets of songs and their lyrics; the first was a dataset in which the host took the year end Billboard charts and scraped song lyrics websites. The second and third are more exhaustive song lyric datasets scraped from similar sites, but include both songs that were present on the Top 100 chart and those that were not. By combining these datasets, we can get a large amount of songs and their lyrics, as well as labels of “success” as determined by whether or not they made the chart. Since the Billboard Top 100 chart ranges from 1964 to 2015, there will likely be a time series bias while working with the data and recency bias with more songs being released closer to current day. 
 
