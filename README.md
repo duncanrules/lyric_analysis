@@ -81,7 +81,10 @@ While the neural network based approach gave us the highest accuracy of 92.55% a
 
 ## Reflections
 
+Class imbalance plays a crucial role in model accuracy and we need to develop more robust ways of downplaying its effect. We tuned class weights and downsampled our data set to improve our predictions but the problem continued to affect our models.
+
+Working with large datasets has opened us up to a plethora of new avenues and challenges through which we initially struggled but overcame. Asymptotically, many if not all our basic functions (saving a file, version control etc.) need to be redefined to the problem forcing us to adopt service based architectures and third party computing resources. 
+
+Although we engaged in extensive feature engineering, it was more horizontal than vertical i.e., we applied multiple transformations but did little to optimize them.  For instance, Latent Semantic Analysis (LSA) or Singular Vector Decomposition (SVD) for text mining are great feature selection methods which work wonders in this dimensionality cursed problem.
+
 This problem ideally needs to find a balance between interpretability and predictive power such that an Artist can, based on learnings, write a successful song. Our approach, given the data, solely focused on predicting. Features like the genre, single/album song, beats/min can effectively improve our predictive power as well as shine a light on the interpretability of our models. This ensemble can be used by record companies, in addition to other available data to predict the probability of a song/artist, of their choosing, making it to the Billboard Top 100. In the future, this can be extended to the artist by improving interpretability of the model helping them write chart topping songs.
-    Class imbalance plays a crucial role in model accuracy and we need to develop more robust ways of downplaying its effect. We tuned class weights and downsampled our data set to improve our predictions but there is still a long way to go.
-    Working with large datasets has opened us up to a plethora of new avenues and challenges through which we initially struggled but overcame. Asymptotically, many if not all our basic functions (saving a file, version control etc.) need to be redefined to the problem forcing us to adopt service based architectures and third party computing resources. 
-    Although we engaged in extensive feature engineering, it was more horizontal than vertical i.e., we applied multiple transformations but did little to optimize them.  For instance, Latent Semantic Analysis (LSA) or Singular Vector Decomposition (SVD) for text mining are great feature selection methods which work wonders in this dimensionality cursed problem.
